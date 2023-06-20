@@ -13,7 +13,7 @@ necoArc is a multi-purpose Discord bot developed in [Discord.js](https://discord
 
 To run the bot locally or on your own server, make sure you have the following prerequisites:
 
-- [Node.js](https://nodejs.org/) (v14.0.0 or higher)
+- [Node.js](https://nodejs.org/) (v13.0.0 or higher)
 - [npm](https://www.npmjs.com/)
 
 Follow these steps to set up the bot:
@@ -27,18 +27,13 @@ npm start
 ## Usage
 
 To use necoArc in your Discord server, make sure you have the necessary permissions to invite the bot. You can invite the bot using the following link:
-necoArc
+[necoArc](https://discord.com/oauth2/authorize?client_id=1041230301340368896&scope=bot)
 
 Once the bot is invited to your server, you can use the bot's commands by mentioning it or using the bot's prefix followed by the command.
 
-For a list of available commands and their usage, type `!help` or `@necoArc help` in a text channel.
+For a list of available commands and their usage, type `#help` in a text channel.
 
 ## Contributing
 
 Contributions to necoArc are welcome! If you have any ideas, bug fixes, or improvements, feel free to open an issue or submit a pull request.
 
-Before contributing, please read the [Contribution Guidelines](CONTRIBUTING.md) for more details.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
