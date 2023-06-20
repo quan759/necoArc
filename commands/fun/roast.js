@@ -8,7 +8,7 @@ module.exports = {
   description: 'oh hell nah',
   run: async(client, message, args) => {
     let name;
-    if(!args.length){
+    if(!args.length || args[0] == '<@814668739664412703>'){
       name = message.author;
     }
     else{

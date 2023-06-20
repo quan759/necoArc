@@ -76,6 +76,22 @@ module.exports = {
           value: 'oh hell nah',
         },
         {
+          name: '#snake',
+          value: 'remember me?',
+        },
+        {
+          name: '#tzfe',
+          value: 'the 2048 game',
+        },
+        {
+          name: '#trivia',
+          value: 'true or false?',
+        },
+        {
+          name: '#hangman',
+          value: 'i wanna live',
+        },
+        {
           name: 'ChatCompletion',
           value: 'Send this to any channel to allow the bot to receive questions and send answers.',
         },
