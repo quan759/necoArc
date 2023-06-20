@@ -1,19 +1,44 @@
-# Discord.js
+# necoArc Discord Bot
 
-Discord.js is a JavaScript library that allows developers to interact with the Discord API. It allows developers to create bots and automate tasks on a Discord server. The library provides an easy-to-use interface for interacting with the Discord API, including functionality for sending and receiving messages, managing server members, and more. It uses an event-based system, which means that bots can respond to events such as message or voice state updates, and take actions based on those events.
+necoArc is a multi-purpose Discord bot developed in [Discord.js](https://discord.js.org/). It offers various features including chatGPT integration, image manipulation, mini-games, and fetching user profiles from chess.com and lichess.
 
-# Template
+## Features
 
-**Name** : Discord.js
+- **ChatGPT**: necoArc utilizes the power of OpenAI's ChatGPT to provide intelligent conversation capabilities within your Discord server.
+- **Imagine**: Generate and manipulate images using commands such as image resizing, filters, text overlays, and more.
+- **Mini-games**: Enjoy a collection of fun mini-games to play with other members of your Discord server.
+- **Chess Profile**: Retrieve user profiles from chess.com and lichess, including stats, ratings, and game history.
 
-**Description** : Discord.js bot, that uses the v.14!
+## Installation
 
-# Errors/Feedback
+To run the bot locally or on your own server, make sure you have the following prerequisites:
 
-If you found any error feel free to do any of these things : 
+- [Node.js](https://nodejs.org/) (v14.0.0 or higher)
+- [npm](https://www.npmjs.com/)
 
-- Comment on the template
-- DM me on Discord
-- Mail me at Hugoonreplit@gmail.com
+Follow these steps to set up the bot:
 
-All errors/feedback is appreciated!
+1. Clone this repository to your local machine or server.
+2. Navigate to the project directory and install the required dependencies by running the following command:
+npm install
+3. Configure the bot token and other settings in the `config.json` file.
+4. Start the bot by running the following command:
+npm start
+## Usage
+
+To use necoArc in your Discord server, make sure you have the necessary permissions to invite the bot. You can invite the bot using the following link:
+necoArc
+
+Once the bot is invited to your server, you can use the bot's commands by mentioning it or using the bot's prefix followed by the command.
+
+For a list of available commands and their usage, type `!help` or `@necoArc help` in a text channel.
+
+## Contributing
+
+Contributions to necoArc are welcome! If you have any ideas, bug fixes, or improvements, feel free to open an issue or submit a pull request.
+
+Before contributing, please read the [Contribution Guidelines](CONTRIBUTING.md) for more details.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
