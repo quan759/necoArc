@@ -59,17 +59,6 @@ client.on('messageCreate', async function (message) {
     message.channel.send(message.channel.id);
   }
 
-  if (message.content.startsWith('hi') || message.content.startsWith('hello') || message.content.startsWith('chào') || message.content.startsWith('hj')) {
-    message.channel.send("<:t_:1054249182510207026> ✌️");
-    return;
-  }
-  if (message.content.toLowerCase() == ('bot ngoan') || message.content.toLowerCase() == ('bot hay')) {
-    message.reply("https://media.discordapp.net/attachments/951661841636032542/1084494966815981588/FB_IMG_1678624705351.png");
-  }
-  if (message.content.toLowerCase() == ('bot ngu') || message.content.toLowerCase() == ('bot đần')) {
-    message.reply("https://media.discordapp.net/attachments/951661841636032542/1084495064484556830/FB_IMG_1678235402162.jpg");
-  }
-
   if (message.content.startsWith('whitelist') & message.author.id == '814668739664412703') {
     const user = message.mentions.members.first();
     await list.set(user.id, true);
@@ -123,7 +112,15 @@ client.on('messageCreate', async function (message) {
       return message.reply(`You have exceeded the usage limit of ${usageLimit} times per day. Please try again in ${remainingTime} minutes.`);
     }
 
-    let conversationLog = [{ role: 'system', content: 'You are a friendly chatbot.' }];
+    let conversationLog = [
+      { role: 'system', content: 'You are a friendly Discord chatbot named Neco arc, a master in math and science, a master in history, a genius poet, and a genius developer' },
+      { role: 'user', content: `Who's your developer?` },
+      { role: 'assistant', content: 'He is Quan. His full name is Ngo Hong Quan' },
+      { role: 'user', content: `Can you give me your developer's profile card?`},
+      { role: 'assistant', content: 'Here it is: https://quan759.github.io'},
+      { role: 'user', content: `who are you?`},
+      { role: 'assistant', content: `I'm a Discord bot named Neco Arc. You can view my documentation to learn more about me. Here is its link: https://neco-arc-web.quan0rznt759.repl.co/index.html`}
+];
 
     try {
       await message.channel.sendTyping();
@@ -143,7 +140,7 @@ client.on('messageCreate', async function (message) {
 
       const result = await openai
         .createChatCompletion({
-          model: 'gpt-3.5-turbo',
+          model: 'gpt-3.5-turbo-0613',
           messages: conversationLog,
           max_tokens: 1000,
         })

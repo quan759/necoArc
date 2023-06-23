@@ -22,7 +22,7 @@ module.exports = async (client, message) => {
 
             if (now < expirationTime) {
                 const timeLeft = (expirationTime - now) / 1000;
-                return message.reply(`Vui lòng chờ ${timeLeft.toFixed(1)} giây để sử dụng lệnh này!`);
+                return message.reply(`Please wait ${timeLeft.toFixed(1)} second(s) to use this command!`);
             }
         }
         timestamps.set(message.author.id, now);

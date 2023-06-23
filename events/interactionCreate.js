@@ -15,7 +15,7 @@ module.exports = async (client, interaction) => {
 
             if (now < expirationTime) {
                 const timeLeft = (expirationTime - now) / 1000;
-                return interaction.reply(`Vui lòng chờ ${timeLeft.toFixed(1)} giây để sử dụng lệnh này!`);
+                return interaction.reply(`Please wait ${timeLeft.toFixed(1)} second(s) to use this command!`);
             }
         }
     timestamps.set(interaction.user.id, now);
