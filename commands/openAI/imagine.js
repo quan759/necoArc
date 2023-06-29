@@ -17,13 +17,13 @@ module.exports = {
       return message.reply('Please provide a prompt for the image generation.');
     }
 
-    const userId = message.author.id;
-    const now = new Date();
+    // const userId = message.author.id;
+    // const now = new Date();
 
-    if (userMap[userId] && now - userMap[userId] < 24 * 60 * 60 * 1000 && message.author.id !== '814668739664412703') {
-      const remainingTime = Math.round((userMap[userId] - now + 24 * 60 * 60 * 1000) / 1000 / 60);
-      return message.reply(`You can only use this command once per day. Please try again in ${remainingTime} minutes.`);
-    }
+    // if (userMap[userId] && now - userMap[userId] < 24 * 60 * 60 * 1000 && message.author.id !== '814668739664412703') {
+    //   const remainingTime = Math.round((userMap[userId] - now + 24 * 60 * 60 * 1000) / 1000 / 60);
+    //   return message.reply(`You can only use this command once per day. Please try again in ${remainingTime} minutes.`);
+    // }
 
 
     try {
@@ -36,7 +36,7 @@ module.exports = {
 
       message.channel.send(response.data.data[0].url);
 
-      userMap[userId] = now;
+      // userMap[userId] = now;
     } catch (error) {
       console.error(error);
       message.reply('There was an error generating the image.');

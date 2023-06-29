@@ -1,5 +1,5 @@
 const axios = require('axios');
-const chessDatabase = require('../../chesss');
+const rdb = require('../../database');
 
 module.exports = {
   name: 'chess',
@@ -8,7 +8,7 @@ module.exports = {
     try {
       if (message.mentions.members.first() && typeof message.mentions.members.first() !== "undefined") {
         const user = message.mentions.members.first();
-        const link = await chessDatabase.get(`${user.id}_chess.com`);
+        const link = await rdb.get(`${user.id}_chess.com`);
         if (!link) {
           return message.channel.send(`User ${user} has not linked yet.`);
         }
@@ -56,7 +56,7 @@ module.exports = {
       }
 
       let username;
-      const linkedUsername = await chessDatabase.get(`${message.author.id}_chess.com`);
+      const linkedUsername = await rdb.get(`${message.author.id}_chess.com`);
 
       if (!args.length) {
         if (!linkedUsername) {

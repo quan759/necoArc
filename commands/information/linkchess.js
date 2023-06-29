@@ -1,6 +1,5 @@
-const Database = require("@replit/database");
 require('dotenv').config();
-const chessDatabase = require('../../chesss');
+const rdb = require('../../database');
 
 module.exports = {
   name: 'link',
@@ -19,7 +18,7 @@ module.exports = {
     }
 
     try {
-      await chessDatabase.set(`${message.author.id}_${platform}`, username);
+      await rdb.set(`${message.author.id}_${platform}`, username);
 
       message.channel.send(`Successfully linked your ${platform} username as **${username}**.`);
     } catch (error) {

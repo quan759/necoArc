@@ -23,12 +23,12 @@ module.exports = {
       },
       fields: [
         {
-          name: 'Ngày gia nhập Discord',
+          name: 'Joined Discord on',
           value: `\`${new Date(user.createdAt).toLocaleDateString()}\``,
           inline: true,
         },
         {
-          name: 'Vào server lúc',
+          name: 'Joined server at', 
           value: `\`${new Date(member.joinedAt).toLocaleDateString()}\``,
           inline: true,
         },

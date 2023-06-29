@@ -6,15 +6,15 @@ module.exports = {
     options: [
         {
             name: 'prefix',
-            description: 'Prefix bạn muốn đổi',
+            description: 'Prefix you want to change to',
             type: 'STRING',
             required: false,
         }
     ],
     run: async (client, interaction, serverData) => {
         const prefixSet = interaction.options.getString('prefix');
-        if (!prefixSet) return interaction.reply(`Prefix hiện tại của server là: ${serverData.prefix}`);
+        if (!prefixSet) return interaction.reply(`Server's current prefix: ${serverData.prefix}`);
         await db.set(interaction.guildId, { prefix: prefixSet.toLowerCase() });
-        interaction.reply('Bạn đã đổi prefix thành công!');
+        interaction.reply('Sucess! ✅');
     },
 };

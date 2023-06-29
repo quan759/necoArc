@@ -5,7 +5,7 @@ module.exports = async (client, interaction) => {
     if (!interaction.isCommand()) return;
     const serverData = await db.get(interaction.guildId) || { prefix: '#'};
     const command = client.interactions.get(interaction.commandName);
-    if (!command) interaction.reply('Lệnh không hợp lệ');
+    if (!command) interaction.reply('Invalid command!');
     if (!client.cooldowns.has(command.name)) client.cooldowns.set(command.name, new Collection());
         const now = Date.now();
         const timestamps = client.cooldowns.get(command.name);

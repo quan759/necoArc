@@ -88,6 +88,22 @@ module.exports = {
           value: 'true or false?',
         },
         {
+          name: '#fasttype',
+          value: 'human type!',
+        },
+        {
+          name: '#tictactoe',
+          value: 'take the center first, trust me',
+        },
+        {
+          name: '#connect4',
+          value: 'connect 4',
+        },
+        {
+          name: '#minesweeper',
+          value: 'dont get boom',
+        },
+        {
           name: 'ChatCompletion',
           value: 'Send this to any channel to allow the bot to receive questions and send answers.',
         },

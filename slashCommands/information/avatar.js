@@ -2,12 +2,12 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
   name: 'avatar',
-  description: 'Lấy avatar của bạn hoặc người khác',
+  description: `Get someone's avatar`,
   type: 'CHAT_INPUT',
   options: [
     {
       name: 'user',
-      description: 'Người bạn muốn lấy avatar',
+      description: 'The person whose avatar you want to retrieve',
       type: 'USER',
       required: false,
     },
@@ -23,18 +23,18 @@ module.exports = {
         name: 'Neco arc',
         url: 'https://discord.js.org',
       },
-      description: `Avatar của \`${member.displayName}\``,
+      description: `\`${member.displayName}\`'s avatar'`,
       image: {
         url: avatarURL,
       },
       fields: [
         {
-          name: 'Ngày gia nhập Discord',
+          name: 'Joined Discord on',
           value: `\`${new Date(user.createdAt).toLocaleDateString()}\``,
           inline: true,
         },
         {
-          name: 'Vào server lúc',
+           name: 'Joined server at', 
           value: `\`${new Date(member.joinedAt).toLocaleDateString()}\``,
           inline: true,
         },

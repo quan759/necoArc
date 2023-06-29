@@ -1,7 +1,8 @@
 module.exports = {
   name: 'help',
+  
   description: 'Xem lệnh của bot',
-  run: async (client, interaction) => {
+  run: async (client, interaction, message, serverData, args) => {
     const helpEmbed = {
       color: 0xF5DEB3,
       title: 'Command List',
@@ -29,10 +30,6 @@ module.exports = {
         {
           name: '#avatar',
           value: 'i think i dont have to explain this',
-        },
-        {
-          name: '#ping',
-          value: 'Check latency of the bot',
         },
         {
           name: '#prefix',
@@ -102,5 +99,5 @@ module.exports = {
       },
     };
     await interaction.reply({ embeds: [helpEmbed] });
-  },
+  }
 };
