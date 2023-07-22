@@ -17,7 +17,7 @@ module.exports = {
         name: 'Neco arc',
         url: 'https://discord.js.org',
       },
-      description: `Avatar của \`${member.displayName}\``,
+      description: ` \`${member.displayName}\`'s avatar`,
       image: {
         url: avatarURL,
       },

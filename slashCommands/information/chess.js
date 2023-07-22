@@ -1,6 +1,4 @@
 const axios = require('axios');
-const Database = require("@replit/database");
-// const db = new Database();
 
 module.exports = {
   name: 'chess',

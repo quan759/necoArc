@@ -6,6 +6,12 @@ module.exports = {
   run: async (client, message, args) => {
     const diff = args[0];
     const mode = args[1];
+    if(mode != 'single' && mode != 'multiple' && mode != null){
+      return message.channel.send('Invalid mode!');
+    }
+    if(diff != 'easy' && diff != 'medium' && diff != 'hard' && diff != null){
+      return message.channel.send('Invalid difficulty!');
+    }
     const game = new Trivia({
       message: message,
       isSlashGame: false,
