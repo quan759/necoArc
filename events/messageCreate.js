@@ -3,7 +3,7 @@ const db = require('../database');
 const { Collection } = require('discord.js');
 module.exports = async (client, message) => {
     if (message.author.bot) return;
-    const serverData = await db.get(message.guildId) || { prefix: '#' };
+    const serverData = await db.get(message.guildId) || { prefix: 'nco' };
     const prefixes = ['#', serverData.prefix];
     const prefix = prefixes.find(p => message.content.startsWith(p));
 

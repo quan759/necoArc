@@ -3,6 +3,7 @@ const { Minesweeper } = require('discord-gamecord');
 module.exports = {
   name: 'minesweeper',
   description: 'ms',
+  aliases: ['ms'],
   run: async (client, message, args) => {
     const Game = new Minesweeper({
       message: message,

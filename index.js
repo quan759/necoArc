@@ -62,7 +62,7 @@ client.on('messageCreate', async function (message) {
     return message.channel.send('This comment has been changed to #active and #deactivate.');
   }
 
-  if (await rdb.get(message.channel.id) && !message.content.startsWith('//') && !message.content.startsWith('#') || message.content.toLowerCase().includes('<@1041230301340368896>')) {
+  if (await rdb.get(message.channel.id) && !message.content.startsWith('//') && !message.content.startsWith('nco') || message.content.toLowerCase().includes('<@1041230301340368896>')) {
 
     let conversationLog = [
       { role: 'system', content: 'You are a friendly chat bot named Neco Arc' },

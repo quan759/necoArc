@@ -3,6 +3,7 @@ const { TicTacToe } = require('discord-gamecord');
 module.exports = {
   name: 'tictactoe',
   description: 'ttt',
+  aliases: ['ttt'],
   run: async (client, message, args) => {
     const Game = new TicTacToe({
       message: message,

@@ -52,8 +52,6 @@ module.exports = {
             check = 1;
             collector.stop();
             const score = (5 - attempts - collector.collected.size) * -1;
-
-            // Lưu số trận chiến thắng vào database
             const wins = await df.get(`guess_wins_${message.author.id}`);
             await df.set(`guess_wins_${message.author.id}`, (wins || 0) + 1);
             return message.reply(`<:teemo_wow:976865567204048947> 🎉 Congratulations! You guessed the number in ${score} attempts.`);

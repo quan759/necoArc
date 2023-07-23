@@ -6,6 +6,7 @@ const data = JSON.parse(rawData);
 module.exports = {
   name: 'fasttype',
   description: 'ft',
+  aliases: ['ft'],
   run: async (client, message, args) => {
     const randomIndex = Math.floor(Math.random() * data.sentences.length);
     const randomMessage = data.sentences[randomIndex];
