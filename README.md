@@ -31,7 +31,7 @@ To use necoArc in your Discord server, make sure you have the necessary permissi
 
 Once the bot is invited to your server, you can use the bot's commands by mentioning it or using the bot's prefix followed by the command.
 
-For a list of available commands and their usage, type `#help` in a text channel.
+For a list of available commands and their usage, type `nco help` in a text channel.
 
 ## Contributing
 
