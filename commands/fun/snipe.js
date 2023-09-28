@@ -20,7 +20,7 @@ module.exports = {
         },
         description: deletedMessage.content,
         footer: {
-          text: `In #${message.channel.name} | ${pos} / 10`,
+          text: `In #${message.channel.name} | ${pos} / ${deletedMessages.length}`,
           icon_url: message.guild.iconURL(),
         },
         timestamp: deletedMessage.createdTimestamp,

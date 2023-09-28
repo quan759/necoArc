@@ -15,7 +15,6 @@ module.exports = {
             .addField(`❯ Fun: [12]`, `\`tzfe\`, \`ms\`, \`c4\`, \`ttt\`, \`cf\`, \`ft\`, \`guess\`, \`roast\`, \`rps\`, \`slot\`, \`snake\`, \`trivia\``)
             .addField(`❯ Fish: [3]`, `\`catch\`, \`sell\`, \`inv\``)
             .addField(`❯ Filters: [23]`, `\`3d\`, \`bass\`, \`china\`, \`chipmunk\`, \`dance\`, \`darthvader\`, \`doubletime\`, \`earrape\`, \`equalizer\`, \`nightcore\`, \`pitch\`, \`pop\`, \`rate\`, \`reset\`, \`slowmotion\`, \`soft\`, \`speed\`, \`superbass\`, \`treblebass\`, \`tremolo\`, \`vaporwave\`, \`vibrate\`, \`vibrato\``)
-            .addField(`❯ Filters: [23]`, `\`3d\`, \`bass\`, \`china\`, \`chipmunk\`, \`dance\`, \`darthvader\`, \`doubletime\`, \`earrape\`, \`equalizer\`, \`nightcore\`, \`pitch\`, \`pop\`, \`rate\`, \`reset\`, \`slowmotion\`, \`soft\`, \`speed\`, \`superbass\`, \`treblebass\`, \`tremolo\`, \`vaporwave\`, \`vibrate\`, \`vibrato\``)
             .addField(`❯ Music: [20]`, `\`247\`, \`clear\`, \`forward\`, \`join\`, \`leave\`, \`loop\`, \`loopall\`, \`nowplaying\`, \`pause\`, \`play\`, \`queue\`, \`replay\`, \`resume\`, \`rewind\`, \`search\`, \`seek\`, \`shuffle\`, \`skip\`, \`skipto\`, \`volume\``);
       message.channel.send({embeds: [embed]});
     }

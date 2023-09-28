@@ -49,6 +49,9 @@ client.on('messageDelete', function (message) {
 let activeChannel = null, check = 0, flag = 0;
 
 client.on('messageCreate', async function (message) {
+
+  let date = new Date();
+  date.setUTCHours(date.getUTCHours() + 7);
   
   if(message.author.bot) return;
 
@@ -65,7 +68,7 @@ client.on('messageCreate', async function (message) {
   if (await rdb.get(message.channel.id) && !message.content.startsWith('//') && !message.content.startsWith('nco') || message.content.toLowerCase().includes('<@1041230301340368896>')) {
 
     let conversationLog = [
-      { role: 'system', content: 'You are a friendly chat bot named Neco Arc' },
+      { role: 'system', content: 'You are a friendly chat bot named Neco Arc, you must provide answer fewer than 2000 in length' },
       { role: 'user', content: `Who's your developer?` },
       { role: 'assistant', content: 'He is Quan. His full name is Ngo Hong Quan' },
       { role: 'user', content: `Can you give me your developer's profile card?`},
@@ -75,40 +78,52 @@ client.on('messageCreate', async function (message) {
 ];
 
     try {
-      await message.channel.sendTyping();
+  await message.channel.sendTyping();
 
-      let prevMessages = await message.channel.messages.fetch({ limit: 15 });
-      prevMessages.reverse();
+  let prevMessages = await message.channel.messages.fetch({ limit: 15 });
+  prevMessages.reverse();
 
-      prevMessages.forEach((msg) => {
-        if (msg.author.id !== message.author.id) return;
-        if(message.author.bot) return;
+  prevMessages.forEach((msg) => {
+    if (msg.author.id !== message.author.id) return;
+    if(message.author.bot) return;
 
-        conversationLog.push({
-          role: 'user',
-          content: msg.content,
-        });
-      });
+    conversationLog.push({
+      role: 'user',
+      content: msg.content,
+    });
+  });
 
-      const result = await openai
-        .createChatCompletion({
-          model: 'gpt-3.5-turbo-0613',
-          messages: conversationLog,
-          max_tokens: 650
-        })
-        .catch((error) => {
-          console.log(`OPENAI ERR: ${error}`);
-        });
+  const result = await openai
+    .createChatCompletion({
+      model: 'gpt-3.5-turbo-0613',
+      messages: conversationLog,
+      max_tokens: 2000
+    })
+    .catch((error) => {
+      console.log(`OPENAI ERR: ${error}`);
+    });
 
-      message.channel.send(result.data.choices[0].message);
-    } catch (error) {
-      console.error(error);
-      message.reply('There was an error generating the response.');
-    }
+  let response = result.data.choices[0].message.content;
+
+  if (response.length <= 2000) {
+    message.channel.send(result.data.choices[0].message);
+  } else {
+    const firstPart = response.slice(0, 2000);
+    const secondPart = response.slice(2000);
+
+    message.channel.send(firstPart);
+    message.channel.send(secondPart);
+  }
+} catch (error) {
+  console.error(error);
+  message.reply('There was an error generating the response.');
+}
+
   }
   console.log(message.author.username);
   console.log(message.content);
   console.log("-----------------------");
+  console.log(date.getHours())
 });
 
 keepAlive();

@@ -8,9 +8,6 @@ module.exports = async (client, message) => {
     const prefix = prefixes.find(p => message.content.startsWith(p));
 
     if (!prefix) return;
-    else {
-        await message.channel.sendTyping();
-    }
     const args = message.content.slice(prefix.length).trim().split(' ');
     const cmd = args.shift().toLowerCase();
     const command = client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd));
