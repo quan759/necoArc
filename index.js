@@ -49,26 +49,17 @@ client.on('messageDelete', function (message) {
 let activeChannel = null, check = 0, flag = 0;
 
 client.on('messageCreate', async function (message) {
-
-  let date = new Date();
-  date.setUTCHours(date.getUTCHours() + 7);
   
   if(message.author.bot) return;
-
-  if (message.content.startsWith('whitelist') & message.author.id == '814668739664412703') {
-    const user = message.mentions.members.first();
-    await rdb.set(user.id, true);
-    await message.channel.send('Sucess <:emoji_40:1113073468125229166>')
-  }
 
   if (message.content.toLowerCase() === 'chatcompletion' || message.content.toLowerCase() === 'stopcompletion') {
     return message.channel.send('This comment has been changed to #active and #deactivate.');
   }
 
-  if (await rdb.get(message.channel.id) && !message.content.startsWith('//') && !message.content.startsWith('nco') || message.content.toLowerCase().includes('<@1041230301340368896>')) {
+  if (await rdb.get(message.channel.id) && !message.content.startsWith('//') && !message.content.startsWith('#') || message.content.toLowerCase().includes('<@1041230301340368896>')) {
 
     let conversationLog = [
-      { role: 'system', content: 'You are a friendly chat bot named Neco Arc, you must provide answer fewer than 2000 in length' },
+      { role: 'system', content: 'You are a friendly chat bot named Neco Arc' },
       { role: 'user', content: `Who's your developer?` },
       { role: 'assistant', content: 'He is Quan. His full name is Ngo Hong Quan' },
       { role: 'user', content: `Can you give me your developer's profile card?`},
@@ -123,7 +114,6 @@ client.on('messageCreate', async function (message) {
   console.log(message.author.username);
   console.log(message.content);
   console.log("-----------------------");
-  console.log(date.getHours())
 });
 
 keepAlive();
