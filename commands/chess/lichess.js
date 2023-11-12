@@ -9,7 +9,7 @@ module.exports = {
 
     if (!args.length) {
       if (!linkedUsername) {
-        return message.channel.send(`You need to provide a chess.com username, ${message.author}!`);
+        return message.channel.send(`You need to provide a lichess username, ${message.author}!`);
       }
       username = linkedUsername;
     } else {
@@ -34,20 +34,20 @@ module.exports = {
       const avatarUrl = `https://lichess.org/api/avatar/${username}`;
 
       const embed = {
-        color: 0xF5DEB3,
+        color: '#0000FF',
         title: `Lichess Profile for ${username}`,
         description: `\`\`\`\⏱️Rapid Elo: ${rapidElo}\n⚡Blitz Elo: ${blitzElo}\n🐇Bullet Elo: ${bulletElo}\n💬Name: ${name}\`\`\``,
         author: {
-          name: 'Neco arc',
-          icon_url: 'https://i.imgur.com/L0sBgsi.png',
+          name: `${message.guild.me.displayName}`,
+          icon_url: client.user.displayAvatarURL({ dynamic: true }),
         },
         thumbnail: {
           url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Lichess_Logo.svg/1200px-Lichess_Logo.svg.png',
         },
         timestamp: new Date(),
         footer: {
-          text: 'Neco arc',
-          icon_url: 'https://i.imgur.com/L0sBgsi.png',
+          text: `${message.guild.me.displayName}`,
+          icon_url: client.user.displayAvatarURL({ dynamic: true }),
         },
       };
 

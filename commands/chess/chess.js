@@ -31,24 +31,36 @@ module.exports = {
         const rapidElo = data.chess_rapid?.last?.rating || 'Unknown';
         const blitzElo = data.chess_blitz?.last?.rating || 'Unknown';
         const bulletElo = data.chess_bullet?.last?.rating || 'Unknown';
+        const bestRapid = data.chess_rapid?.best?.rating || 'Unknown';
+        const bestBlitz = data.chess_blitz?.best?.rating || 'Unknown';
+        const bestBullet = data.chess_bullet?.best?.rating || 'Unknown';
+        const winR = data.chess_rapid?.record?.win || '0';
+        const drawR = data.chess_rapid?.record?.draw || '0';
+        const lossR = data.chess_rapid?.record?.loss || '0';
+        const winB = data.chess_blitz?.record?.win || '0';
+        const drawB = data.chess_blitz?.record?.draw || '0';
+        const lossB = data.chess_blitz?.record?.loss || '0';
+        const winA = data.chess_bullet?.record?.win || '0';
+        const drawA = data.chess_bullet?.record?.draw || '0';
+        const lossA = data.chess_bullet?.record?.loss || '0';
         const name = data1.name || 'Unknown';
         const avatarUrl = data1.avatar || 'https://betacssjs.chesscomfiles.com/bundles/web/images/noavatar_l.1c5172d5.gif';
 
         const embed = {
-          color: 0xF5DEB3,
+          color: '#0000FF',
           title: `Chess.com Profile for ${link}`,
-          description: `\`\`\`\⏱️Rapid Elo: ${rapidElo}\n⚡Blitz Elo: ${blitzElo}\n🐇Bullet Elo: ${bulletElo}\n💬Name: ${name}\`\`\``,
+          description: `\`\`\`\💬Name: ${name}\n-----------------------------\n⏱️Rapid Elo: ${rapidElo}\n🔥Best: ${bestRapid}\n🔍W|D|L: ${winR} | ${drawR} | ${lossR}\n-----------------------------\n⚡Blitz Elo: ${blitzElo}\n🔥Best: ${bestBlitz}\n🔍W|D|L: ${winB} | ${drawB} | ${lossB}\n-----------------------------\n🐇Bullet Elo: ${bulletElo}\n🔥Best: ${bestBullet}\n🔍W|D|L: ${winA} | ${drawA} | ${lossA}\`\`\``,
           author: {
-            name: 'Neco arc',
-            icon_url: 'https://i.imgur.com/L0sBgsi.png',
+            name: `${message.guild.me.displayName}`,
+            icon_url: client.user.displayAvatarURL({ dynamic: true }),
           },
           thumbnail: {
             url: avatarUrl,
           },
           timestamp: new Date(),
           footer: {
-            text: 'Neco arc',
-            icon_url: 'https://i.imgur.com/L0sBgsi.png',
+            text: `${message.guild.me.displayName}`,
+            icon_url: client.user.displayAvatarURL({ dynamic: true }),
           },
         };
 
@@ -86,24 +98,36 @@ module.exports = {
       const rapidElo = data.chess_rapid?.last?.rating || 'Unknown';
       const blitzElo = data.chess_blitz?.last?.rating || 'Unknown';
       const bulletElo = data.chess_bullet?.last?.rating || 'Unknown';
+      const bestRapid = data.chess_rapid?.best?.rating || 'Unknown';
+      const bestBlitz = data.chess_blitz?.best?.rating || 'Unknown';
+      const bestBullet = data.chess_bullet?.best?.rating || 'Unknown';
+      const winR = data.chess_rapid?.record?.win || '0';
+      const drawR = data.chess_rapid?.record?.draw || '0';
+      const lossR = data.chess_rapid?.record?.loss || '0';
+      const winB = data.chess_blitz?.record?.win || '0';
+      const drawB = data.chess_blitz?.record?.draw || '0';
+      const lossB = data.chess_blitz?.record?.loss || '0';
+      const winA = data.chess_bullet?.record?.win || '0';
+      const drawA = data.chess_bullet?.record?.draw || '0';
+      const lossA = data.chess_bullet?.record?.loss || '0';
       const name = data1.name || 'Unknown';
       const avatarUrl = data1.avatar || 'https://betacssjs.chesscomfiles.com/bundles/web/images/noavatar_l.1c5172d5.gif';
 
       const embed = {
-        color: 0xF5DEB3,
+        color: '#0000FF',
         title: `Chess.com Profile for ${username}`,
-        description: `\`\`\`\⏱️Rapid Elo: ${rapidElo}\n⚡Blitz Elo: ${blitzElo}\n🐇Bullet Elo: ${bulletElo}\n💬Name: ${name}\`\`\``,
+        description: `\`\`\`\💬Name: ${name}\n-----------------------------\n⏱️Rapid Elo: ${rapidElo}\n🔥Best: ${bestRapid}\n🔍W|D|L: ${winR} | ${drawR} | ${lossR}\n-----------------------------\n⚡Blitz Elo: ${blitzElo}\n🔥Best: ${bestBlitz}\n🔍W|D|L: ${winB} | ${drawB} | ${lossB}\n-----------------------------\n🐇Bullet Elo: ${bulletElo}\n🔥Best: ${bestBullet}\n🔍W|D|L: ${winA} | ${drawA} | ${lossA}\`\`\``,
         author: {
-          name: 'Neco arc',
-          icon_url: 'https://i.imgur.com/L0sBgsi.png',
+          name: `${message.guild.me.displayName}`,
+          icon_url: client.user.displayAvatarURL({ dynamic: true }),
         },
         thumbnail: {
           url: avatarUrl,
         },
         timestamp: new Date(),
         footer: {
-          text: 'Neco arc',
-          icon_url: 'https://i.imgur.com/L0sBgsi.png',
+          text: `${message.guild.me.displayName}`,
+          icon_url: client.user.displayAvatarURL({ dynamic: true }),
         },
       };
 

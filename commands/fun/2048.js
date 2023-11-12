@@ -9,7 +9,7 @@ module.exports = {
       isSlashGame: false,
       embed: {
         title: '2048',
-        color: '0xF5DEB3'
+        color: '#0000FF'
       },
       emojis: {
         up: '⬆️',

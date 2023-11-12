@@ -3,17 +3,17 @@ module.exports = {
     name: 'server',
     run: async (client, message) => {
         const embed = {
-      color: 0xF5DEB3,
+      color: '#0000FF',
       title: 'Servers',
       author: {
-        name: 'Neco arc',
-        url: 'https://discord.js.org',
+        name: `${message.guild.me.displayName}`,
+        url: client.user.displayAvatarURL({ dynamic: true }),
       },
       description: `I'm in ${client.guilds.cache.size} server(s):\n\`\`\`${client.guilds.cache.map(guild => `${guild.name} (${guild.id})`).join('\n')}\`\`\``,
            timestamp: new Date(),
       footer: {
         text: ':D',
-        icon_url: 'https://i.imgur.com/L0sBgsi.png',
+        icon_url: client.user.displayAvatarURL({ dynamic: true }),
       },
     };
     message.channel.send({ embeds: [embed] });

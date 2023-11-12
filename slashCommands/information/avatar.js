@@ -18,9 +18,9 @@ module.exports = {
     const avatarURL = user.displayAvatarURL({ format: 'png', size: 4096, dynamic: true });
 
     const embed = new MessageEmbed({
-      color: 0xF5DEB3,
+      color: '#0000FF',
       author: {
-        name: 'Neco arc',
+        name: `${message.guild.me.displayName}`,
         url: 'https://discord.js.org',
       },
       description: `\`${member.displayName}\`'s avatar'`,
@@ -41,7 +41,7 @@ module.exports = {
       ],
       footer: {
         text: `ID: ${user.id}`,
-        icon_url: 'https://i.imgur.com/L0sBgsi.png',
+        icon_url: client.user.displayAvatarURL({ dynamic: true }),
       },
       timestamp: new Date(),
     });

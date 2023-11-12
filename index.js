@@ -111,6 +111,7 @@ client.on('messageCreate', async function (message) {
 }
 
   }
+  console.log(message.channel.id)
   console.log(message.author.username);
   console.log(message.content);
   console.log("-----------------------");

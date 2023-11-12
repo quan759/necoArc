@@ -12,7 +12,7 @@ module.exports = {
       const deletedMessage = deletedMessages[pos - 1];
 
       const snipeEmbed = {
-        color: 0xF5DEB3,
+        color: '#0000FF',
         title: 'get snipe nerd',
         author: {
           name: deletedMessage.author.tag,

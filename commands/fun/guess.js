@@ -16,17 +16,17 @@ module.exports = {
       }
 
       const embed = {
-        color: 0xF5DEB3,
+        color: '#0000FF',
         title: 'Top Guess Game Winners',
         description: '```' + topPlayers.map((player, index) => `${index + 1}. ${getPlayerDisplayName(message.guild, player.userId)} - Score: ${player.score}`).join('\n') + '```',
         author: {
-          name: 'Neco arc',
-          icon_url: 'https://i.imgur.com/L0sBgsi.png',
+          name: `${message.guild.me.displayName}`,
+          icon_url: client.user.displayAvatarURL({ dynamic: true }),
         },
         timestamp: new Date(),
         footer: {
-          text: 'Neco arc',
-          icon_url: 'https://i.imgur.com/L0sBgsi.png',
+          text: `${message.guild.me.displayName}`,
+          icon_url: client.user.displayAvatarURL({ dynamic: true }),
         },
       };
 
@@ -103,7 +103,6 @@ module.exports = {
             const score = (10 - attempts - collector.collected.size) * -1;
             message.reply(`<:teemo_wow:976865567204048947> 🎉 Congratulations! You guessed the number in ${score} attempts.`);
 
-            // Lưu số trận chiến thắng vào database
             const wins = await df.get(`guess_wins_${message.author.id}`);
             await df.set(`guess_wins_${message.author.id}`, (wins || 0) + 5);
 
@@ -157,7 +156,6 @@ module.exports = {
             const score = (5 - attempts - collector.collected.size) * -1;
             message.reply(`<:teemo_wow:976865567204048947> 🎉 Congratulations! You guessed the number in ${score} attempts.`);
 
-            // Lưu số trận chiến thắng vào database
             const wins = await df.get(`guess_wins_${message.author.id}`);
             await df.set(`guess_wins_${message.author.id}`, (wins || 0) + 20);
 
