@@ -14,7 +14,7 @@ module.exports = {
     try {
       const response = await axios.get(apiUrl, { responseType: 'arraybuffer' });
       const embed = {
-        color: 0xF5DEB3,
+        color: '0xF5DEB3',
         title: `calculating things`,
         author: {
           name: `${message.guild.me.displayName}`,

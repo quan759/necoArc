@@ -5,7 +5,7 @@ module.exports = {
     description: 'Xem lệnh của bot',
     run: async (client, message, args) => {
         const embed = new MessageEmbed()
-            .setDescription(`The bot prefix is: **nco**`)
+            .setDescription(`The bot prefix is: **#**`)
             .setColor('#0000FF')
             .setAuthor({ name: `${message.guild.me.displayName}'s here, what's your emergency`, iconURL: message.guild.iconURL({ dynamic: true }) })
             .setThumbnail(client.user.displayAvatarURL({ dynamic: true, size: 2048 })) 
