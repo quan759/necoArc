@@ -1,11 +1,11 @@
 const axios = require('axios');
-const rdb = require('../../database');
+const db = require('../../database');
 module.exports = {
   name: 'lichess',
   description: 'Shows the Lichess profile of a user',
   run: async (client, message, args) => {
     let username;
-    const linkedUsername = await rdb.get(`${message.author.id}_lichess`);
+    const linkedUsername = await db.get(`${message.author.id}_lichess`);
 
     if (!args.length) {
       if (!linkedUsername) {

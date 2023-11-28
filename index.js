@@ -3,7 +3,6 @@ const { Configuration, OpenAIApi } = require("openai");
 const axios = require('axios');
 const keepAlive = require("./server")
 const db = require('./database');
-const rdb = require('./database');
 
 require('dotenv').config()
 
@@ -46,8 +45,6 @@ client.on('messageDelete', function (message) {
   }
 });
 
-let activeChannel = null, check = 0, flag = 0;
-
 client.on('messageCreate', async function (message) {
   
   if(message.author.bot) return;
@@ -56,7 +53,7 @@ client.on('messageCreate', async function (message) {
     return message.channel.send('This comment has been changed to #active and #deactivate.');
   }
 
-  if (await rdb.get(message.channel.id) && !message.content.startsWith('//') && !message.content.startsWith('#') || message.content.toLowerCase().includes('<@1041230301340368896>')) {
+  if (await db.get(message.channel.id) && !message.content.startsWith('//') && !message.content.startsWith('#') || message.content.toLowerCase().includes('<@1041230301340368896>')) {
 
     let conversationLog = [
       { role: 'system', content: 'You are a friendly chat bot named Neco Arc' },
@@ -116,6 +113,7 @@ client.on('messageCreate', async function (message) {
   console.log(message.content);
   console.log("-----------------------");
 });
+
 
 keepAlive();
 

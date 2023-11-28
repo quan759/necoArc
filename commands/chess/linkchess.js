@@ -1,5 +1,5 @@
 require('dotenv').config();
-const rdb = require('../../database');
+const db = require('../../database');
 
 module.exports = {
   name: 'link',
@@ -18,7 +18,7 @@ module.exports = {
     }
 
     try {
-      await rdb.set(`${message.author.id}_${platform}`, username);
+      await db.set(`${message.author.id}_${platform}`, username);
 
       message.channel.send(`Successfully linked your ${platform} username as **${username}**.`);
     } catch (error) {

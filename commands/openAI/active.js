@@ -1,8 +1,8 @@
-const rdb = require('../../database');
+const db = require('../../database');
 module.exports = {
   name: 'active',
   run: async(client, message) => {
-    const isActive = await rdb.get(message.channel.id);
+    const isActive = await db.get(message.channel.id);
     if (!isActive) {
       await rdb.set(message.channel.id, true);
       await message.channel.send('You have activated ChatCompletion. Please type your message.');
